@@ -16,7 +16,7 @@ let convert (number: int): string =
 
   let result = 
     pairs
-    |> Seq.map(fun p -> { predicate = hasFactorOf (fst p); result = snd p })
+    |> Seq.map (fun p -> { predicate = hasFactorOf (fst p); result = snd p })
     |> Seq.filter (fun c -> c.predicate number)
     |> Seq.fold (fun acc c -> System.String.Concat(acc, c.result)) ""
 
